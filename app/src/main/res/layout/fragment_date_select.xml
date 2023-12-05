@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.addtrip.DateSelect">
+    <include
+        layout="@layout/toolbar_addtrip"
+        />
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/addtrip_date_title"
+        android:layout_below="@+id/addtrip_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:text="날짜를 선택해 주세요" />
+<!--날짜가 보여지는곳-->
+    <TextView
+        android:id="@+id/addtrip_startdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addtrip_date_title"
+        android:textSize="25dp"
+        android:layout_marginHorizontal="30dp"
+        android:padding="5dp"
+        android:layout_marginVertical="10dp"
+        android:textColor="@color/white"
+        android:background="@drawable/background_round_blue"
+        android:backgroundTint="@color/greenblue"
+        android:paddingLeft="20dp"
+        android:text="출발 날짜"/>
+    <TextView
+        android:id="@+id/addtrip_endDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_marginVertical="10dp"
+        android:padding="5dp"
+        android:layout_marginHorizontal="30dp"
+        android:textColor="@color/white"
+        android:paddingLeft="20dp"
+        android:layout_below="@+id/addtrip_startdate"
+        android:background="@drawable/background_round_blue"
+        android:backgroundTint="@color/liteblue"
+        android:text="도착 날짜"/>
+    <CalendarView
+        android:id="@+id/date_picker"
+        android:layout_below="@+id/addtrip_endDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/background_round_white"
+        android:elevation="10dp"
+        />
+</RelativeLayout>

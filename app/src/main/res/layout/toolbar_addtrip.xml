@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/addtrip_toolbar"
+        android:layout_height="@dimen/toolbar_height"
+        android:layout_width="match_parent"
+        android:background="@color/liteblue">
+
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+
+            >
+        <ImageButton
+            android:id="@+id/addtrip_toolbar_backbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:padding="1dp"
+
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_arrow_back_24px"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addtrip_toolbarbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:background="@drawable/background_round_white"
+            android:backgroundTint="@color/white"
+            android:text="다음 화면이 보임"
+            android:textColor="@color/liteblue"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:padding="5dp"
+            android:drawableRight="@drawable/ic_arrow_forward_24px"
+            android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+</layout>
