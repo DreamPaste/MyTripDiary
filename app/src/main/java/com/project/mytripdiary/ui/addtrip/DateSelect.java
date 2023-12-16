@@ -2,9 +2,11 @@ package com.project.mytripdiary.ui.addtrip;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +41,17 @@ public class DateSelect extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        hideBottomNavigation(true);
+        Log.d("frag", "onCreate: addtrip_dateselect");
+        // This callback will only be called when MyFragment is at least Started.
+        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
+            @Override
+            public void handleOnBackPressed() {
+                // Handle the back button event
+                getParentFragmentManager().popBackStack();
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
 
     }
 
@@ -60,7 +73,7 @@ public class DateSelect extends Fragment {
         calendarView = view.findViewById(R.id.date_picker);
         toolbarbtn = view.findViewById(R.id.addtrip_toolbarbtn);
         //nav를 숨김
-        hideBottomNavigation(true);
+
 
         //백 버튼 세팅(toolbarBackbtn에 뒤로가기 이벤트를 처리합니다.)
         // 백 버튼 클릭 이벤트 처리
@@ -113,12 +126,13 @@ public class DateSelect extends Fragment {
                     place_map nextFragment = new place_map();
                     // Bundle을 프래그먼트에 전달
                     nextFragment.setArguments(bundle1);
-
                     // FragmentTransaction을 사용하여 다음 프래그먼트로 이동
                     getParentFragmentManager().beginTransaction()
+                            .setCustomAnimations(R.anim.fade_in,R.anim.fade_out)
+                            .setReorderingAllowed(true) // 이 부분을 추가
                             .replace(R.id.nav_host_fragment_activity_main, nextFragment)
                             .addToBackStack(null)
-                            .commit();
+                            .commitAllowingStateLoss();
 
             } else{
                 Toast.makeText(getContext(), "날짜 지정이 안되어있습니다.", Toast.LENGTH_SHORT).show();
@@ -131,7 +145,7 @@ public class DateSelect extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        hideBottomNavigation(false);
+
     }
     private String formatDate(Calendar calendar) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
@@ -144,6 +158,12 @@ public class DateSelect extends Fragment {
             bottomNavigation.setVisibility(View.GONE);
         else
             bottomNavigation.setVisibility(View.VISIBLE);
+    }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d("frag", "ondestroy: addtrip_dateselect");
+
     }
 
     }

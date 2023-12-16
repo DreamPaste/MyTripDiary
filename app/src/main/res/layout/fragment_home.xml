@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/home_0"
     tools:context=".ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/text_home"
+        android:id="@+id/text_blank"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -15,8 +16,136 @@
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="여행을 추가한 후 이용해보세요"
+        android:visibility="gone"
+        android:layout_centerVertical="true" />
+    <RelativeLayout
+        android:id="@+id/home_wrap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/titleWrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_round_greenblue"
+            android:elevation="10dp">
+
+            <TextView
+                android:id="@+id/home_tripTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/nanumgothicbold"
+                android:text="제주"
+                android:textColor="@color/white"
+                android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginVertical="10dp"
+                android:layout_toRightOf="@id/home_tripTitle"
+                android:fontFamily="@font/nanumgothicbold"
+                android:text="여행"
+                android:textColor="@color/white"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/home_dateRange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/home_tripTitle"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/nanumgothic"
+                android:text="2222.22.22 ~ 2222.22.22"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <ImageButton
+                android:id="@+id/home_before"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/home_dateRange"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/background_circle"
+                android:src="@drawable/ic_arrow_back_liteblue" />
+
+            <TextView
+                android:id="@+id/home_Dday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/home_dateRange"
+                android:layout_toLeftOf="@+id/home_foward"
+                android:layout_toRightOf="@id/home_before"
+                android:fontFamily="@font/nanumgothicbold"
+                android:gravity="center"
+                android:text="Day1"
+                android:textColor="@color/white"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/home_Ddate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/home_Dday"
+                android:layout_marginHorizontal="60dp"
+                android:gravity="center"
+                android:text="2020.20.20"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:fontFamily="@font/nanumgothic"/>
+
+            <ImageButton
+                android:id="@+id/home_foward"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/home_dateRange"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/background_circle"
+                android:src="@drawable/ic_arrow_forward_24px" />
+        </RelativeLayout>
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/home_mapView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/titleWrap"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:id="@+id/home_listTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_round_white"
+            android:backgroundTint="#A5D6A7"
+            android:textSize="20dp"
+            android:layout_below="@id/home_mapView"
+            android:layout_centerHorizontal="true"
+            android:text="장소 목록"
+            android:textColor="@color/white"
+            android:padding="4dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/home_listTitle"
+            android:layout_margin="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarSize="5dp"
+            android:scrollbarThumbVertical="@color/greenblue"
+            android:scrollbars="vertical"
+            android:layout_marginHorizontal="20dp"
+            />
+
+
+    </RelativeLayout>
+</RelativeLayout>

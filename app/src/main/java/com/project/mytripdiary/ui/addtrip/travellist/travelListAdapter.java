@@ -44,14 +44,11 @@ public class travelListAdapter extends RecyclerView.Adapter<travelListAdapter.Vi
             name = itemView.findViewById(R.id.addtrip_travel_text);
 
             // 뷰 홀더 생성 시에 클릭 이벤트 처리
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    int position = getAdapterPosition();
-                    if (position != RecyclerView.NO_POSITION && listener != null) {
-                        String data = name.getText().toString();
-                        listener.onItemClicked(position, data);
-                    }
+            itemView.setOnClickListener(view -> {
+                int position = getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION && listener != null) {
+                    String data = name.getText().toString();
+                    listener.onItemClicked(position, data);
                 }
             });
         }

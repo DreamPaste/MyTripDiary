@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginHorizontal="10dp"
+    android:elevation="10dp"
+    android:background="@drawable/background_round_greenblue"
+    android:layout_height="150dp">
+<TextView
+    android:id="@+id/diary_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="XX 여행"
+    android:textColor="@color/white"
+    android:textSize="30dp"
+    android:layout_margin="10dp"
+    />
+    <TextView
+        android:id="@+id/diary_date"
+        android:layout_below="@id/diary_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2222.22.22~2222.22.22"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_marginHorizontal="10dp"
+        />
+    <ImageButton
+        android:id="@+id/diary_edit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_edit_24"
+        android:backgroundTint="@android:color/transparent"/>
+
+</RelativeLayout>

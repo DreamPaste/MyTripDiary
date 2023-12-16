@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_gravity="center"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_round_greenblue"
+    android:padding="16dp">
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_toLeftOf="@+id/btnSave"
+        android:text="제주 여행"
+        android:fontFamily="@font/nanumgothicbold"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"/>
+    <TextView
+        android:id="@+id/dialog_dates"
+        android:layout_width="match_parent"
+        android:layout_toLeftOf="@id/btnSave"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_title"
+        android:text="2222.22.22-2222.22.22"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        />
+    <EditText
+        android:id="@+id/dialog_editText"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/dialog_dates"
+        android:layout_height="match_parent"
+        android:hint="여기에 일기를 입력하세요"
+        android:padding="10dp"
+        android:gravity="top"
+        android:background="@drawable/background_round_white"
+
+        android:inputType="textMultiLine"
+        android:minLines="3" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_round_white"
+        android:backgroundTint="@color/white"
+        android:text="저장" />
+</RelativeLayout>

@@ -10,7 +10,9 @@
         android:id="@+id/addtrip_toolbar"
         android:layout_height="@dimen/toolbar_height"
         android:layout_width="match_parent"
-        android:background="@color/liteblue">
+        android:background="#0080DEEA"
+
+        android:elevation="10dp">
 
         <RelativeLayout
             android:layout_height="match_parent"
@@ -25,7 +27,7 @@
             android:padding="1dp"
 
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_arrow_back_24px"/>
+            android:src="@drawable/ic_arrow_back_liteblue"/>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/addtrip_toolbarbtn"
             android:layout_width="wrap_content"
